@@ -1,3 +1,17 @@
+body {
+    background-color: rgb(250, 203, 145);
+}
+
 img {
+    max-height: 250px;
     max-width: 400px;
+}
+
+#div {
+    width: fit-content;
+    max-height: 500px;
+    overflow: auto;
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
 }
