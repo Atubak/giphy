@@ -1,15 +1,11 @@
 import './style.css';
 
-function fetchGif(searchTerm = 'lol') {
+async function fetchGif(searchTerm = 'lol') {
   const url = `https://api.giphy.com/v1/gifs/translate?api_key=rpbWQ0CSEoOJ4QMjk94L3bhXndUqX44E&s=${searchTerm}`;
 
-  fetch(url, {
-    mode: 'cors',
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      img.src = response.data.images.original.url;
-    });
+  const response = await fetch(url, { mode: 'cors' });
+  const gifData = await response.json();
+  img.src = gifData.data.images.original.url;
 }
 
 function inputGif(e) {
